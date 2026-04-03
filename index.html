@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Design System — Foundations, Components & Patterns</title>
+  <meta name="description" content="A comprehensive design system with tokens, components, and patterns for building consistent, accessible user interfaces." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <!-- ========== SIDEBAR NAV ========== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <div class="logo-icon">
+          <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="url(#logo-grad)"/><path d="M8 14h12M14 8v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><defs><linearGradient id="logo-grad" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs></svg>
+        </div>
+        <div>
+          <span class="logo-title">Design System</span>
+          <span class="logo-version">v1.0.0</span>
+        </div>
+      </div>
+      <button class="sidebar-close" id="sidebar-close" aria-label="Close sidebar">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M6 6l8 8M14 6l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+    <nav class="sidebar-nav">
+      <div class="nav-section">
+        <span class="nav-section-title">Getting Started</span>
+        <a href="#hero" class="nav-link active" data-section="hero">Overview</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-section-title">Foundations</span>
+        <a href="#colors" class="nav-link" data-section="colors">Colors</a>
+        <a href="#typography" class="nav-link" data-section="typography">Typography</a>
+        <a href="#spacing" class="nav-link" data-section="spacing">Spacing & Sizing</a>
+        <a href="#elevation" class="nav-link" data-section="elevation">Elevation</a>
+        <a href="#icons" class="nav-link" data-section="icons">Icons</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-section-title">Components</span>
+        <a href="#buttons" class="nav-link" data-section="buttons">Buttons</a>
+        <a href="#inputs" class="nav-link" data-section="inputs">Inputs</a>
+        <a href="#checkboxes" class="nav-link" data-section="checkboxes">Checkboxes & Toggles</a>
+        <a href="#avatars" class="nav-link" data-section="avatars">Avatars</a>
+        <a href="#badges" class="nav-link" data-section="badges">Badges & Tags</a>
+        <a href="#cards" class="nav-link" data-section="cards">Cards</a>
+        <a href="#modals" class="nav-link" data-section="modals">Modals</a>
+        <a href="#tooltips" class="nav-link" data-section="tooltips">Tooltips</a>
+        <a href="#toasts" class="nav-link" data-section="toasts">Toasts</a>
+        <a href="#tabs" class="nav-link" data-section="tabs">Tabs</a>
+        <a href="#tables" class="nav-link" data-section="tables">Tables</a>
+      </div>
+      <div class="nav-section">
+        <span class="nav-section-title">Patterns</span>
+        <a href="#patterns" class="nav-link" data-section="patterns">Templates</a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- ========== MAIN CONTENT ========== -->
+  <main class="main" id="main">
+    <!-- Top bar -->
+    <header class="topbar">
+      <button class="menu-btn" id="menu-btn" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M4 7h14M4 11h14M4 15h14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </button>
+      <div class="topbar-right">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg class="icon-sun" width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 2v2M10 16v2M2 10h2M16 10h2M4.93 4.93l1.41 1.41M13.66 13.66l1.41 1.41M4.93 15.07l1.41-1.41M13.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <svg class="icon-moon" width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17.09 11.18A7 7 0 018.82 2.91 7 7 0 1017.09 11.18z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="content">
+      <!-- ===== HERO ===== -->
+      <section id="hero" class="section hero-section">
+        <div class="hero-badge">Design System v1.0</div>
+        <h1 class="hero-title">Build consistent,<br/><span class="gradient-text">beautiful interfaces.</span></h1>
+        <p class="hero-description">A comprehensive design system with design tokens, reusable components, and ready-made patterns — your single source of truth for product design.</p>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <span class="stat-number" id="stat-colors">0</span>
+            <span class="stat-label">Color Tokens</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="stat-components">0</span>
+            <span class="stat-label">Components</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="stat-patterns">0</span>
+            <span class="stat-label">Patterns</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" id="stat-icons">0</span>
+            <span class="stat-label">Icons</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== COLORS ===== -->
+      <section id="colors" class="section">
+        <div class="section-header">
+          <span class="section-tag">Foundations</span>
+          <h2 class="section-title">Colors</h2>
+          <p class="section-desc">A perceptually balanced, HSL-based color system with semantic aliases and multi-theme support.</p>
+        </div>
+
+        <!-- Primitive Colors -->
+        <h3 class="subsection-title">Primitive Palette</h3>
+        <div class="color-palette-group">
+          <div class="color-row">
+            <span class="color-row-label">Blue</span>
+            <div class="color-swatches" id="palette-blue"></div>
+          </div>
+          <div class="color-row">
+            <span class="color-row-label">Purple</span>
+            <div class="color-swatches" id="palette-purple"></div>
+          </div>
+          <div class="color-row">
+            <span class="color-row-label">Teal</span>
+            <div class="color-swatches" id="palette-teal"></div>
+          </div>
+          <div class="color-row">
+            <span class="color-row-label">Green</span>
+            <div class="color-swatches" id="palette-green"></div>
+          </div>
+          <div class="color-row">
+            <span class="color-row-label">Amber</span>
+            <div class="color-swatches" id="palette-amber"></div>
+          </div>
+          <div class="color-row">
+            <span class="color-row-label">Red</span>
+            <div class="color-swatches" id="palette-red"></div>
+          </div>
+          <div class="color-row">
+            <span class="color-row-label">Neutral</span>
+            <div class="color-swatches" id="palette-neutral"></div>
+          </div>
+        </div>
+
+        <!-- Semantic Colors -->
+        <h3 class="subsection-title">Semantic Tokens</h3>
+        <div class="semantic-colors" id="semantic-colors"></div>
+      </section>
+
+      <!-- ===== TYPOGRAPHY ===== -->
+      <section id="typography" class="section">
+        <div class="section-header">
+          <span class="section-tag">Foundations</span>
+          <h2 class="section-title">Typography</h2>
+          <p class="section-desc">A modular type scale using Inter for UI and JetBrains Mono for code.</p>
+        </div>
+        <div class="type-scale" id="type-scale"></div>
+        <h3 class="subsection-title">Code Font</h3>
+        <div class="code-block">
+          <code>const designSystem = { version: '1.0.0', tokens: 128 };</code>
+        </div>
+      </section>
+
+      <!-- ===== SPACING ===== -->
+      <section id="spacing" class="section">
+        <div class="section-header">
+          <span class="section-tag">Foundations</span>
+          <h2 class="section-title">Spacing & Sizing</h2>
+          <p class="section-desc">A 4px base-unit spacing scale for consistent rhythm across all layouts.</p>
+        </div>
+        <div class="spacing-scale" id="spacing-scale"></div>
+        <h3 class="subsection-title">Border Radius</h3>
+        <div class="radius-demo" id="radius-demo"></div>
+      </section>
+
+      <!-- ===== ELEVATION ===== -->
+      <section id="elevation" class="section">
+        <div class="section-header">
+          <span class="section-tag">Foundations</span>
+          <h2 class="section-title">Elevation</h2>
+          <p class="section-desc">Layered shadow system for visual hierarchy and depth perception.</p>
+        </div>
+        <div class="elevation-grid" id="elevation-grid"></div>
+      </section>
+
+      <!-- ===== ICONS ===== -->
+      <section id="icons" class="section">
+        <div class="section-header">
+          <span class="section-tag">Foundations</span>
+          <h2 class="section-title">Icons</h2>
+          <p class="section-desc">A curated icon set at 20px and 24px base sizes with currentColor fills.</p>
+        </div>
+        <div class="icon-grid" id="icon-grid"></div>
+      </section>
+
+      <!-- ===== BUTTONS ===== -->
+      <section id="buttons" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P0</span>
+          <h2 class="section-title">Buttons</h2>
+          <p class="section-desc">Primary action triggers with multiple variants, sizes, and states.</p>
+        </div>
+        <h3 class="subsection-title">Variants</h3>
+        <div class="component-row">
+          <button class="ds-btn ds-btn-primary ds-btn-md">Primary</button>
+          <button class="ds-btn ds-btn-secondary ds-btn-md">Secondary</button>
+          <button class="ds-btn ds-btn-ghost ds-btn-md">Ghost</button>
+          <button class="ds-btn ds-btn-danger ds-btn-md">Danger</button>
+        </div>
+        <h3 class="subsection-title">Sizes</h3>
+        <div class="component-row">
+          <button class="ds-btn ds-btn-primary ds-btn-sm">Small</button>
+          <button class="ds-btn ds-btn-primary ds-btn-md">Medium</button>
+          <button class="ds-btn ds-btn-primary ds-btn-lg">Large</button>
+        </div>
+        <h3 class="subsection-title">With Icons</h3>
+        <div class="component-row">
+          <button class="ds-btn ds-btn-primary ds-btn-md">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Add Item
+          </button>
+          <button class="ds-btn ds-btn-secondary ds-btn-md">
+            Download
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v7m0 0l-3-3m3 3l3-3M3 13h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <button class="ds-btn ds-btn-ghost ds-btn-md ds-btn-icon" aria-label="Settings">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/><path d="M9 1.5v2M9 14.5v2M1.5 9h2M14.5 9h2M3.4 3.4l1.42 1.42M13.18 13.18l1.42 1.42M3.4 14.6l1.42-1.42M13.18 4.82l1.42-1.42" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+        </div>
+        <h3 class="subsection-title">States</h3>
+        <div class="component-row">
+          <button class="ds-btn ds-btn-primary ds-btn-md">Default</button>
+          <button class="ds-btn ds-btn-primary ds-btn-md" disabled>Disabled</button>
+          <button class="ds-btn ds-btn-primary ds-btn-md ds-btn-loading">
+            <span class="spinner"></span>
+            Loading
+          </button>
+        </div>
+      </section>
+
+      <!-- ===== INPUTS ===== -->
+      <section id="inputs" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P0</span>
+          <h2 class="section-title">Text Inputs</h2>
+          <p class="section-desc">Flexible form inputs with labels, helper text, and validation states.</p>
+        </div>
+        <div class="input-grid">
+          <div class="ds-field">
+            <label class="ds-label" for="input-default">Full Name</label>
+            <input class="ds-input" id="input-default" type="text" placeholder="Enter your name" />
+            <span class="ds-helper">Your display name visible to others.</span>
+          </div>
+          <div class="ds-field">
+            <label class="ds-label" for="input-focus">Email Address</label>
+            <input class="ds-input" id="input-focus" type="email" placeholder="you@example.com" value="hello@design.system" />
+          </div>
+          <div class="ds-field ds-field-error">
+            <label class="ds-label" for="input-error">Password</label>
+            <input class="ds-input" id="input-error" type="password" placeholder="••••••••" value="123" />
+            <span class="ds-helper ds-helper-error">Password must be at least 8 characters.</span>
+          </div>
+          <div class="ds-field">
+            <label class="ds-label" for="input-disabled">Username</label>
+            <input class="ds-input" id="input-disabled" type="text" placeholder="Disabled" disabled value="design_system" />
+          </div>
+          <div class="ds-field">
+            <label class="ds-label" for="textarea-default">Bio</label>
+            <textarea class="ds-input ds-textarea" id="textarea-default" placeholder="Tell us about yourself..." rows="3"></textarea>
+          </div>
+          <div class="ds-field">
+            <label class="ds-label" for="select-default">Role</label>
+            <select class="ds-input ds-select" id="select-default">
+              <option value="">Select a role</option>
+              <option value="designer">Designer</option>
+              <option value="developer">Developer</option>
+              <option value="manager">Manager</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CHECKBOXES & TOGGLES ===== -->
+      <section id="checkboxes" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P0</span>
+          <h2 class="section-title">Checkboxes & Toggles</h2>
+          <p class="section-desc">Selection controls for binary choices and option groups.</p>
+        </div>
+        <h3 class="subsection-title">Checkboxes</h3>
+        <div class="check-group">
+          <label class="ds-checkbox">
+            <input type="checkbox" checked /><span class="checkmark"></span> Notifications enabled
+          </label>
+          <label class="ds-checkbox">
+            <input type="checkbox" /><span class="checkmark"></span> Marketing emails
+          </label>
+          <label class="ds-checkbox">
+            <input type="checkbox" disabled /><span class="checkmark"></span> Disabled option
+          </label>
+        </div>
+        <h3 class="subsection-title">Radio Buttons</h3>
+        <div class="check-group">
+          <label class="ds-radio">
+            <input type="radio" name="plan" checked /><span class="radiomark"></span> Free Plan
+          </label>
+          <label class="ds-radio">
+            <input type="radio" name="plan" /><span class="radiomark"></span> Pro Plan
+          </label>
+          <label class="ds-radio">
+            <input type="radio" name="plan" /><span class="radiomark"></span> Enterprise
+          </label>
+        </div>
+        <h3 class="subsection-title">Toggles</h3>
+        <div class="check-group horizontal">
+          <label class="ds-toggle">
+            <input type="checkbox" checked /><span class="toggle-track"><span class="toggle-thumb"></span></span> Dark Mode
+          </label>
+          <label class="ds-toggle">
+            <input type="checkbox" /><span class="toggle-track"><span class="toggle-thumb"></span></span> Auto-save
+          </label>
+          <label class="ds-toggle">
+            <input type="checkbox" disabled /><span class="toggle-track"><span class="toggle-thumb"></span></span> Disabled
+          </label>
+        </div>
+      </section>
+
+      <!-- ===== AVATARS ===== -->
+      <section id="avatars" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P0</span>
+          <h2 class="section-title">Avatars</h2>
+          <p class="section-desc">User representations with image, initials, and icon variants.</p>
+        </div>
+        <h3 class="subsection-title">Sizes</h3>
+        <div class="component-row">
+          <div class="ds-avatar ds-avatar-xs" data-initials="XS"></div>
+          <div class="ds-avatar ds-avatar-sm" data-initials="SM"></div>
+          <div class="ds-avatar ds-avatar-md" data-initials="MD"></div>
+          <div class="ds-avatar ds-avatar-lg" data-initials="LG"></div>
+        </div>
+        <h3 class="subsection-title">Variants</h3>
+        <div class="component-row">
+          <div class="ds-avatar ds-avatar-md ds-avatar-img"><img src="https://i.pravatar.cc/80?img=12" alt="User" /></div>
+          <div class="ds-avatar ds-avatar-md" data-initials="JD"></div>
+          <div class="ds-avatar ds-avatar-md ds-avatar-icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 10a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM3 17.5c0-3.04 3.13-5.5 7-5.5s7 2.46 7 5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <div class="ds-avatar-group">
+            <div class="ds-avatar ds-avatar-md ds-avatar-img"><img src="https://i.pravatar.cc/80?img=1" alt="User" /></div>
+            <div class="ds-avatar ds-avatar-md ds-avatar-img"><img src="https://i.pravatar.cc/80?img=5" alt="User" /></div>
+            <div class="ds-avatar ds-avatar-md ds-avatar-img"><img src="https://i.pravatar.cc/80?img=8" alt="User" /></div>
+            <div class="ds-avatar ds-avatar-md ds-avatar-count" data-initials="+3"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== BADGES ===== -->
+      <section id="badges" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P1</span>
+          <h2 class="section-title">Badges & Tags</h2>
+          <p class="section-desc">Status indicators and categorical labels.</p>
+        </div>
+        <div class="component-row wrap">
+          <span class="ds-badge ds-badge-primary">Primary</span>
+          <span class="ds-badge ds-badge-secondary">Secondary</span>
+          <span class="ds-badge ds-badge-success">Success</span>
+          <span class="ds-badge ds-badge-warning">Warning</span>
+          <span class="ds-badge ds-badge-danger">Danger</span>
+          <span class="ds-badge ds-badge-info">Info</span>
+        </div>
+        <h3 class="subsection-title">Tags (Removable)</h3>
+        <div class="component-row wrap">
+          <span class="ds-tag">Design <button class="tag-remove" aria-label="Remove">×</button></span>
+          <span class="ds-tag">Development <button class="tag-remove" aria-label="Remove">×</button></span>
+          <span class="ds-tag">Research <button class="tag-remove" aria-label="Remove">×</button></span>
+        </div>
+      </section>
+
+      <!-- ===== CARDS ===== -->
+      <section id="cards" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P1</span>
+          <h2 class="section-title">Cards</h2>
+          <p class="section-desc">Versatile content containers for grouping related information.</p>
+        </div>
+        <div class="card-grid">
+          <div class="ds-card ds-card-elevated">
+            <div class="ds-card-media" style="background: linear-gradient(135deg, #6366f1, #a855f7);"></div>
+            <div class="ds-card-body">
+              <h4 class="ds-card-title">Elevated Card</h4>
+              <p class="ds-card-text">Cards use elevation shadows to separate content from the background surface.</p>
+              <div class="ds-card-actions">
+                <button class="ds-btn ds-btn-primary ds-btn-sm">Learn More</button>
+                <button class="ds-btn ds-btn-ghost ds-btn-sm">Dismiss</button>
+              </div>
+            </div>
+          </div>
+          <div class="ds-card ds-card-outlined">
+            <div class="ds-card-media" style="background: linear-gradient(135deg, #14b8a6, #06b6d4);"></div>
+            <div class="ds-card-body">
+              <h4 class="ds-card-title">Outlined Card</h4>
+              <p class="ds-card-text">Outlined cards use a subtle border instead of shadow for a flatter visual style.</p>
+              <div class="ds-card-actions">
+                <button class="ds-btn ds-btn-primary ds-btn-sm">Learn More</button>
+                <button class="ds-btn ds-btn-ghost ds-btn-sm">Dismiss</button>
+              </div>
+            </div>
+          </div>
+          <div class="ds-card ds-card-elevated">
+            <div class="ds-card-body">
+              <div class="ds-card-icon" style="background: linear-gradient(135deg, #f59e0b, #ef4444);">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 3l9 6.5v9a1.5 1.5 0 01-1.5 1.5h-5.25v-6h-4.5v6H4.5A1.5 1.5 0 013 18.5v-9L12 3z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <h4 class="ds-card-title">Without Media</h4>
+              <p class="ds-card-text">Cards can omit the media section and lead with text or icon content directly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== MODALS ===== -->
+      <section id="modals" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P1</span>
+          <h2 class="section-title">Modals</h2>
+          <p class="section-desc">Overlay dialogs for focused tasks that require user attention.</p>
+        </div>
+        <div class="component-row">
+          <button class="ds-btn ds-btn-primary ds-btn-md" id="open-modal-sm">Small Modal</button>
+          <button class="ds-btn ds-btn-secondary ds-btn-md" id="open-modal-md">Medium Modal</button>
+          <button class="ds-btn ds-btn-ghost ds-btn-md" id="open-modal-lg">Large Modal</button>
+        </div>
+        <!-- Modal overlays -->
+        <div class="ds-modal-overlay" id="modal-overlay">
+          <div class="ds-modal" id="modal-content" role="dialog" aria-modal="true">
+            <div class="ds-modal-header">
+              <h3 class="ds-modal-title" id="modal-title">Modal Title</h3>
+              <button class="ds-modal-close" id="modal-close" aria-label="Close modal">
+                <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M5 5l8 8M13 5l-8 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </button>
+            </div>
+            <div class="ds-modal-body" id="modal-body">
+              <p>This is the modal body content. It supports any kind of content including forms, text, and other components.</p>
+            </div>
+            <div class="ds-modal-footer" id="modal-footer">
+              <button class="ds-btn ds-btn-ghost ds-btn-md" id="modal-cancel">Cancel</button>
+              <button class="ds-btn ds-btn-primary ds-btn-md">Confirm</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TOOLTIPS ===== -->
+      <section id="tooltips" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P1</span>
+          <h2 class="section-title">Tooltips</h2>
+          <p class="section-desc">Contextual information displayed on hover or focus.</p>
+        </div>
+        <div class="component-row">
+          <div class="ds-tooltip-wrapper">
+            <button class="ds-btn ds-btn-secondary ds-btn-md">Hover me (Top)</button>
+            <span class="ds-tooltip ds-tooltip-top">Tooltip on top</span>
+          </div>
+          <div class="ds-tooltip-wrapper">
+            <button class="ds-btn ds-btn-secondary ds-btn-md">Hover me (Bottom)</button>
+            <span class="ds-tooltip ds-tooltip-bottom">Tooltip on bottom</span>
+          </div>
+          <div class="ds-tooltip-wrapper">
+            <button class="ds-btn ds-btn-secondary ds-btn-md">Hover me (Left)</button>
+            <span class="ds-tooltip ds-tooltip-left">Left tip</span>
+          </div>
+          <div class="ds-tooltip-wrapper">
+            <button class="ds-btn ds-btn-secondary ds-btn-md">Hover me (Right)</button>
+            <span class="ds-tooltip ds-tooltip-right">Right tip</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TOASTS ===== -->
+      <section id="toasts" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P2</span>
+          <h2 class="section-title">Toasts / Snackbars</h2>
+          <p class="section-desc">Transient notifications that appear and auto-dismiss.</p>
+        </div>
+        <div class="component-row wrap">
+          <button class="ds-btn ds-btn-primary ds-btn-sm" onclick="showToast('info')">Info Toast</button>
+          <button class="ds-btn ds-btn-primary ds-btn-sm" onclick="showToast('success')">Success Toast</button>
+          <button class="ds-btn ds-btn-primary ds-btn-sm" onclick="showToast('warning')">Warning Toast</button>
+          <button class="ds-btn ds-btn-primary ds-btn-sm" onclick="showToast('error')">Error Toast</button>
+        </div>
+        <div class="toast-container" id="toast-container"></div>
+      </section>
+
+      <!-- ===== TABS ===== -->
+      <section id="tabs" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P2</span>
+          <h2 class="section-title">Tabs</h2>
+          <p class="section-desc">Content organization via tabbed navigation.</p>
+        </div>
+        <h3 class="subsection-title">Underline Tabs</h3>
+        <div class="ds-tabs ds-tabs-underline">
+          <button class="ds-tab active" data-tab="tab1">Overview</button>
+          <button class="ds-tab" data-tab="tab2">Features</button>
+          <button class="ds-tab" data-tab="tab3">Pricing</button>
+          <button class="ds-tab" data-tab="tab4">FAQ</button>
+        </div>
+        <div class="ds-tab-panel active" id="tab1">
+          <p>Overview panel content — this is the selected tab's content area.</p>
+        </div>
+        <div class="ds-tab-panel" id="tab2"><p>Features panel content with detailed information about capabilities.</p></div>
+        <div class="ds-tab-panel" id="tab3"><p>Pricing panel content showing plans and tiers.</p></div>
+        <div class="ds-tab-panel" id="tab4"><p>FAQ panel content with frequently asked questions.</p></div>
+
+        <h3 class="subsection-title">Pill Tabs</h3>
+        <div class="ds-tabs ds-tabs-pill">
+          <button class="ds-tab active" data-tab="ptab1">General</button>
+          <button class="ds-tab" data-tab="ptab2">Security</button>
+          <button class="ds-tab" data-tab="ptab3">Billing</button>
+        </div>
+        <div class="ds-tab-panel active" id="ptab1"><p>General settings content.</p></div>
+        <div class="ds-tab-panel" id="ptab2"><p>Security settings content.</p></div>
+        <div class="ds-tab-panel" id="ptab3"><p>Billing settings content.</p></div>
+      </section>
+
+      <!-- ===== TABLES ===== -->
+      <section id="tables" class="section">
+        <div class="section-header">
+          <span class="section-tag">Components · P2</span>
+          <h2 class="section-title">Tables</h2>
+          <p class="section-desc">Structured data display with sorting and selection support.</p>
+        </div>
+        <div class="ds-table-wrapper">
+          <table class="ds-table">
+            <thead>
+              <tr>
+                <th><label class="ds-checkbox compact"><input type="checkbox" id="select-all" /><span class="checkmark"></span></label></th>
+                <th>Name <span class="sort-icon">↕</span></th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Last Active</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><label class="ds-checkbox compact"><input type="checkbox" /><span class="checkmark"></span></label></td>
+                <td>
+                  <div class="table-user">
+                    <div class="ds-avatar ds-avatar-sm ds-avatar-img"><img src="https://i.pravatar.cc/40?img=12" alt="Sarah" /></div>
+                    <div><strong>Sarah Chen</strong><br/><small>sarah@example.com</small></div>
+                  </div>
+                </td>
+                <td>Lead Designer</td>
+                <td><span class="ds-badge ds-badge-success">Active</span></td>
+                <td>2 min ago</td>
+                <td><button class="ds-btn ds-btn-ghost ds-btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td><label class="ds-checkbox compact"><input type="checkbox" /><span class="checkmark"></span></label></td>
+                <td>
+                  <div class="table-user">
+                    <div class="ds-avatar ds-avatar-sm ds-avatar-img"><img src="https://i.pravatar.cc/40?img=33" alt="James" /></div>
+                    <div><strong>James Wilson</strong><br/><small>james@example.com</small></div>
+                  </div>
+                </td>
+                <td>Developer</td>
+                <td><span class="ds-badge ds-badge-warning">Away</span></td>
+                <td>1 hr ago</td>
+                <td><button class="ds-btn ds-btn-ghost ds-btn-sm">Edit</button></td>
+              </tr>
+              <tr>
+                <td><label class="ds-checkbox compact"><input type="checkbox" /><span class="checkmark"></span></label></td>
+                <td>
+                  <div class="table-user">
+                    <div class="ds-avatar ds-avatar-sm" data-initials="AK"></div>
+                    <div><strong>Aika Kobayashi</strong><br/><small>aika@example.com</small></div>
+                  </div>
+                </td>
+                <td>PM</td>
+                <td><span class="ds-badge ds-badge-danger">Offline</span></td>
+                <td>3 days ago</td>
+                <td><button class="ds-btn ds-btn-ghost ds-btn-sm">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- ===== PATTERNS ===== -->
+      <section id="patterns" class="section">
+        <div class="section-header">
+          <span class="section-tag">Patterns</span>
+          <h2 class="section-title">Templates & Patterns</h2>
+          <p class="section-desc">Pre-assembled layouts built entirely from design system components.</p>
+        </div>
+
+        <h3 class="subsection-title">Sign In Form</h3>
+        <div class="pattern-preview">
+          <div class="pattern-auth">
+            <div class="auth-header">
+              <div class="logo-icon" style="margin: 0 auto 16px;">
+                <svg width="36" height="36" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="8" fill="url(#logo-grad2)"/><path d="M8 14h12M14 8v12" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/><defs><linearGradient id="logo-grad2" x1="0" y1="0" x2="28" y2="28"><stop stop-color="#6366f1"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs></svg>
+              </div>
+              <h3>Welcome back</h3>
+              <p>Sign in to your account to continue</p>
+            </div>
+            <div class="ds-field">
+              <label class="ds-label" for="auth-email">Email</label>
+              <input class="ds-input" id="auth-email" type="email" placeholder="you@example.com" />
+            </div>
+            <div class="ds-field">
+              <label class="ds-label" for="auth-pass">Password</label>
+              <input class="ds-input" id="auth-pass" type="password" placeholder="••••••••" />
+            </div>
+            <div class="auth-options">
+              <label class="ds-checkbox"><input type="checkbox" /><span class="checkmark"></span> Remember me</label>
+              <a href="#" class="auth-link">Forgot password?</a>
+            </div>
+            <button class="ds-btn ds-btn-primary ds-btn-md" style="width:100%;">Sign In</button>
+            <p class="auth-footer">Don't have an account? <a href="#" class="auth-link">Sign up</a></p>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Empty State</h3>
+        <div class="pattern-preview">
+          <div class="pattern-empty">
+            <div class="empty-icon">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><rect x="8" y="8" width="32" height="32" rx="8" stroke="currentColor" stroke-width="2" stroke-dasharray="4 4"/><path d="M20 24h8M24 20v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </div>
+            <h3>No projects yet</h3>
+            <p>Create your first project to get started with the design system.</p>
+            <button class="ds-btn ds-btn-primary ds-btn-md">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              Create Project
+            </button>
+          </div>
+        </div>
+
+        <h3 class="subsection-title">Dashboard Stats</h3>
+        <div class="pattern-preview">
+          <div class="pattern-dashboard">
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon" style="background: linear-gradient(135deg, #6366f1, #818cf8);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 10a3.5 3.5 0 100-7 3.5 3.5 0 000 7zM3 17.5c0-3.04 3.13-5.5 7-5.5s7 2.46 7 5.5" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <span class="dash-stat-value">2,847</span>
+                <span class="dash-stat-label">Total Users</span>
+              </div>
+              <span class="dash-stat-change positive">+12.5%</span>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon" style="background: linear-gradient(135deg, #14b8a6, #06b6d4);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 17V7l7-5 7 5v10a1 1 0 01-1 1H4a1 1 0 01-1-1z" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/><path d="M8 18v-5h4v5" stroke="#fff" stroke-width="1.5"/></svg>
+              </div>
+              <div>
+                <span class="dash-stat-value">$48.2K</span>
+                <span class="dash-stat-label">Revenue</span>
+              </div>
+              <span class="dash-stat-change positive">+8.1%</span>
+            </div>
+            <div class="dash-stat-card">
+              <div class="dash-stat-icon" style="background: linear-gradient(135deg, #f59e0b, #f97316);">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 15l4-4 3 3 7-8" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <span class="dash-stat-value">94.2%</span>
+                <span class="dash-stat-label">Uptime</span>
+              </div>
+              <span class="dash-stat-change negative">−0.3%</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="ds-footer">
+        <p>Design System v1.0.0 · Built with ♥ for Figma</p>
+      </footer>
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
